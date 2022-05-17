@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop yeild prediction</title>
+    <style>
+        body{
+            background-color: greenyellow;
+            
+            
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <header>
+            <h1>Crop Yeild Prediction WebApp</h1>
+        </header>
+    </section>
+    <hr>
+    <section>
+        <form action="{{url_for('predict')}}" method="post">
+            <p>
+                <label for="">Nitrogen:</label>
+                <input type="number" required="required" name="N">
+            </p>
+            <p>
+                <label for="">Phosphorus:</label>
+                <input type="number" required="required" name="P">
+            </p>
+            <p>
+                <label for="">Potassium:</label>
+                <input type="number" required="required" name="K">
+            </p>
+            <p>
+                <label for="">Temperature:</label>
+                <input type="number" step="any"  required="required" name="T">
+            </p>
+            <p>
+                <label for="">Humidity:</label>
+                <input type="number" step="any" required="required" name="H">
+            </p>
+            <p>
+                <label for="">pH:</label>
+                <input type="number" step="any" required="required" name="pH">
+            </p>
+            <p>
+                <label for="">Rainfall:</label>
+                <input type="number" step="any" required="required" name="R">
+            </p>
+            <button type="submit">Predict</button>
+        </form>
+        <p>You should plant <b>{{ prediction_text }}</b> on your farm land.</p>
+    </section>
+    <hr>
+    <section>
+        <footer>Thank you.</footer>
+    </section>
+</body>
+</html>
